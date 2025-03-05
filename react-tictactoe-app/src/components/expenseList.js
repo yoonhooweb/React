@@ -1,5 +1,5 @@
 import { Component } from "react";
-import "../components_css/Expense.css";
+import '../components_css/Expense.css';
 export class ExpenseList extends Component {
     render() {
         return (
