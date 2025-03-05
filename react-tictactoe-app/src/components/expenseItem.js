@@ -1,3 +1,4 @@
+import { Component } from "react";
 export class ExpenseItem extends Component {
     render ( ) {
         return (
@@ -6,4 +7,4 @@ export class ExpenseItem extends Component {
     }
 }
 
-
+export default ExpenseItem; 

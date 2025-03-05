@@ -1,3 +1,4 @@
+import { Component } from "react";
 export class ExpenseList extends Component {
     render() {
         return (
@@ -6,3 +7,5 @@ export class ExpenseList extends Component {
         
     }
 }
+
+export default ExpenseList;  
