@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import './App.css';
 import ExpenseForm from './components/ExpenseForm.js'; /* 다른 js 사용하기 위한 기본 셋팅 */
+import ExpenseList from './components/ExpenseList.js';
 
 
 class App extends Component {
@@ -14,6 +15,7 @@ class App extends Component {
             </div>
             <div style={{width: '100%', backgroundColor : "white", padding: '1rem'}}>
                 {/* Expense List */}
+                <ExpenseList />
             </div>
 
             <div style={{display : 'flex', justifyContent : 'end', marginTop : '1rem'}}>
