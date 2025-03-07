@@ -8,7 +8,10 @@ export class ExpenseList extends Component {
     return (
         <>
             <ul>
-                <ExpenseItem item={this.props.itemList} />
+                {this.props.itemList.map(function (item, index) {
+                    return <ExpenseItem key={item.id} item={item} index={index}/>
+                  })
+                }
             </ul>
             <button className='btn'>
                 목록 지우기

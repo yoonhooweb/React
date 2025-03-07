@@ -4,13 +4,13 @@ import '../../src/components_css/ExpenseItem.css'
 
 export class ExpenseItem extends Component {
   render() {
-    console.log(this.props.item);
     return (
       <>
         <li className='item'>
             <div className='info'>
-                <span className='expense'>식비</span>
-                <span className='amount'>원</span>
+                
+                <span className='expense' >{this.props.item.charge}</span>
+                <span className='amount'>{this.props.item.amount}</span>
             </div>
             <div>
                 <button className='edit-btn' ><MdOutlineMode /></button>
