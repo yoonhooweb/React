@@ -8,7 +8,6 @@ export class ExpenseItem extends Component {
       <>
         <li className='item'>
             <div className='info'>
-                
                 <span className='expense' >{this.props.item.charge}</span>
                 <span className='amount'>{this.props.item.amount}</span>
             </div>
