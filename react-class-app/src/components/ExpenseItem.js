@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MdDelete, MdOutlineMode  } from "react-icons/md";
-import '../../src/components_css/ExpenseItem.css'
+import '../components_css/ExpenseItem.css'
 
 export class ExpenseItem extends Component {
   render() {

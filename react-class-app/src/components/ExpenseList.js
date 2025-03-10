@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../../src/components_css/Expense.css'
+import '../components_css/Expense.css'
 import ExpenseItem from './ExpenseItem'
 import { MdDelete } from 'react-icons/md'
 

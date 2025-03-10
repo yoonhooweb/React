@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import '../../src/components_css/Expense.css'
+import '../components_css/Expense.css'
 import { MdSend } from 'react-icons/md';
 
 export class ExpenseForm extends Component {
