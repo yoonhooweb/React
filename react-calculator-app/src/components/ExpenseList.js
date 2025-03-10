@@ -8,8 +8,12 @@ export class ExpenseList extends Component {
     return (
         <>
             <ul>
-                {this.props.itemList.map(function (item, index) {
-                    return <ExpenseItem key={item.id} item={item} index={index}/>
+                {this.props.itemList.map((item) => {
+                    return <ExpenseItem 
+                                key={item.id} 
+                                item={item} 
+                                delete={this.props.handleDelete} 
+                            />
                   })
                 }
             </ul>

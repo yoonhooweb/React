@@ -13,7 +13,9 @@ export class ExpenseItem extends Component {
             </div>
             <div>
                 <button className='edit-btn' ><MdOutlineMode /></button>
-                <button className='clear-btn'><MdDelete></MdDelete></button>                
+                <button className='clear-btn' onClick={ () => {
+                    this.props.delete(this.props.item.id);
+                }}><MdDelete /></button>                
             </div>
         </li>
       </>
