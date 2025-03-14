@@ -1,0 +1,49 @@
+:root {
+    --primaryColor: #90a959;
+    --secondColor: #e9b872;
+    --mainWhite: #fff;
+    --mainBlack: #222;
+    --mainRed: #c45151;
+    --mainGreen: #4caf50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--secondColor);
+    color: var(--mainBlack);
+}
+
+h1 {
+    margin: 1rem 0;
+}
+.main-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.expense-form {
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.expense-list {
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
+}
+
+.footer > p {
+    font-size: 1.2rem;
+}
