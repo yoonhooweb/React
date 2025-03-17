@@ -10,6 +10,12 @@ ul {
     list-style: none;
 }
 
+button { 
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 .black-nav {
     padding: 20px 10px;
     color: #fff;

@@ -5,7 +5,7 @@ function App() {
 
 	let [data, setData] = useState(['남자코드추천', '강남우동맛집', '파이썬독학']);
 	let [count, setCount] = useState([0,0,0]);
-	let [modal, setModal] = useState("1");
+	let [modal, setModal] = useState("open");
 
 	return (
 		<div className='app'>
@@ -17,15 +17,17 @@ function App() {
 					data.map((item , index) => {
 						return (
 							<li key={index}>
-								<h4 onClick={() => setModal ( modal == 'open' ? '1' : 'open' )}>
+								<h4 onClick={() => setModal ( modal == 'open' ? 'close' : 'open' )}>
 									{item}
 									{/* <span onClick={() => setCount(count + 1)}>👍</span> */}
 
-									<span onClick={ () => {
+									<button onClick={ () => {
+										console.log(count);
 										let newArray = count;
 										newArray[index] = newArray[index] + 1; 
+										console.log(newArray);
 										setCount(newArray);
-									}}>👍👍👍👍👍</span>
+									}}>👍👍👍👍👍</button>
 
 									<span>{count[index]}</span>
 								</h4>
