@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+.black-nav {
+    padding: 20px 10px;
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    width: 100%;
+}
+
+.list {
+    padding-left: 20px;
+    text-align: left;
+}
+
+.list li {
+    border-bottom: 1px solid #ddd;
+}
+
+.modal { 
+    margin-top: 20px;
+    padding: 20px;
+    background: #ddd;
+    text-align: left;
+}
