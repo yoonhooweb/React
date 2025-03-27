@@ -70,9 +70,6 @@ function App() {
         setLike(newLike);
     };
 
-	const currentDate = new Date();
-	const formattedDate = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()} ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
-
     return (
         <>
             <h3 className="title">fruit</h3>
@@ -80,12 +77,8 @@ function App() {
                 {fruitName.map((v, i) => {
                     return (
                         <li key={i}>
-
-
                             <span>{v}</span>
-                            <button className="like" onClick={() => likeBtn(i)}>
-                                👍
-                            </button>
+                            <button className="like" onClick={() => likeBtn(i)}>👍</button>
                             <span className="like-count"> {like[i]} </span>
                             <button onClick={() => modalOpen(i)}>모달</button>
                             <button onClick={() => arrayRemove(i)}>삭제</button>
