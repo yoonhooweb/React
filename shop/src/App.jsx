@@ -8,9 +8,16 @@ import {Route, Routes, Link, useNavigate, Outlet} from 'react-router-dom'
 import DetailShop from './components/Detail.jsx'
 
 function App() {
-
 	let [shoes , setShoes] = useState( shoesData )
+	let [displayShoes, setDisplayShoes] = useState(shoesData); // 화면에 표시할 데이터
 	let navi = useNavigate();
+
+	const orderBy = () => {
+        let newArray = [...shoes].sort((a, b) => a.title.localeCompare(b.title));
+        setDisplayShoes(newArray);
+
+		console.log(shoes);
+    };
 
     return (
         <div className="app">
@@ -27,12 +34,12 @@ function App() {
             <div className="main-bg">
             </div>
 			{
-				shoes.map( (item , i) => {
+				displayShoes.map( (item , i) => {
 					return (
 					<Container>
 						<Row>
-							<Col className="" key={item.id}>
-								<img src={`https://codingapple1.github.io/shop/shoes${i+1}.jpg`}alt=""width="80%"/>
+							<Col className="" key={item.id} onClick={ navi("/detail/:id") }>
+								<img src={`https://codingapple1.github.io/shop/shoes${item.id + 1}.jpg`}alt="" width="80%"/>
 								<h3>{item.title}</h3>
 								<p>{item.content}</p>
 								<p>{item.price}</p>
@@ -42,12 +49,11 @@ function App() {
 					)
 				})
 			}
-
+			
+			<button onClick={ () => orderBy()}>정렬</button>
 
 			<Routes>
-				<Route path="/detail" element={ <DetailShop /> }>
-					<Route path="/detail/show" element={ <div> 신발보여줘 </div> }> </Route>
-					<Route path="/detail/hide" element={ <div> 없애줘 </div> }> </Route>
+				<Route path="/detail/:id" element={ <DetailShop data={shoes}/> }>
 				</Route>
 			</Routes>
 
