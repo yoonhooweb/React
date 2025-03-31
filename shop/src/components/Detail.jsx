@@ -1,5 +1,6 @@
 import {Link, Outlet, useParams } from 'react-router-dom';
 
+
 function DetailShop(props) {
 
     let param = useParams();
@@ -30,7 +31,9 @@ function DetailShop(props) {
                         <p>{number.price}</p>
                         <button className="btn btn-danger">주문하기</button>
                         <Link to="/">홈으로</Link>
+                        
                     </div>
+                    <Outlet />
                 </div>
             </div>
         </>

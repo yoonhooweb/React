@@ -6,7 +6,11 @@ import shoesData from './data.jsx'
 import {Route, Routes, Link, useNavigate, Outlet} from 'react-router-dom'
 import DetailShop from './components/detail.jsx'
 import List from './components/List.jsx'
+import Sub from './components/sub/sub.jsx'
 
+/* 
+	
+*/
 function App() {
 	let [shoes , setShoes] = useState( shoesData )
 	let [displayShoes, setDisplayShoes] = useState(shoesData); // 화면에 표시할 데이터
@@ -29,7 +33,9 @@ function App() {
 			<Routes>
 				<Route path="/" element={ <List data={shoes}/> }></Route>
 				<Route path="/detail/:id" element={ <DetailShop data={shoes}/> }>
+					<Route path="/detail/:id/test" element={ <Sub /> } />
 				</Route>
+				
 			</Routes>
 
         </div>
