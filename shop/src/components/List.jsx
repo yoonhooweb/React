@@ -5,7 +5,6 @@ import {Container, Nav, Navbar, Row, Col} from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 
 export default function List({data}) {
-    console.log(data);
     let navi = useNavigate();
 
     const orderBy = () => {
@@ -20,9 +19,9 @@ export default function List({data}) {
             {
                 data.map( (item , i) => {
                     return (
-                    <Container>
+                    <Container key={item.id}>
                         <Row>
-                            <Col className="1" key={item.id} onClick={() => navi(`/detail/${item.id}`) }>
+                            <Col className="1" onClick={() => navi(`/detail/${item.id}`) }>
                                 <img src={`https://codingapple1.github.io/shop/shoes${item.id + 1}.jpg`}alt="" width="80%"/>
                                 <h3>{item.title}</h3>
                                 <p>{item.content}</p>

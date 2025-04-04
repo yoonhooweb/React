@@ -27,9 +27,7 @@ function App() {
                     </Nav>
                 </Container>
             </Navbar>
-			
-			
-
+            
 			<Routes>
 				<Route path="/" element={ <List data={shoes}/> }></Route>
 				<Route path="/detail/:id" element={ <DetailShop data={shoes}/> }>
