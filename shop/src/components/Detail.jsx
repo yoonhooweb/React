@@ -30,15 +30,12 @@ function DetailShop(props) {
         return <div> 존재하지 않는 상품입니다. </div>
     }
 
-    
-
     return (
         <>
             <div className="container">
                 {
                     alertSwitch == true ? <Alert /> : null
                 }
-                
                 <div className="row">
                     <div className="col-md-6">
                         <img src={`https://codingapple1.github.io/shop/shoes${number.id + 1}.jpg`} width="100%"/>
