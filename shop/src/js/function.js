@@ -15,8 +15,3 @@ export const getData = async (shoes , count) => {
         console.log("데이터 가져오기 실패");
     }
 };
-
-export const noneData = () => {
-    let none = document.querySelector(".none");
-    return none;
-}
