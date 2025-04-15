@@ -1,12 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import shoesData from "./data.jsx";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import DetailShop from "./components/detail.jsx";
 import List from "./components/List.jsx";
-import Sub from "./components/sub/sub.jsx";
+import Sub from "./components/sub/Sub.jsx";
 import { orderBy, getData} from './js/function.js'
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
     return (
         <div className="app">
             <Navbar bg="dark" data-bs-theme="dark">
-                <Container>
+                <Container className="gkgldkgld">
                     <Navbar.Brand>Shop</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link onClick={() => navi("/")}>Home</Nav.Link>
@@ -48,7 +48,7 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<List data={shoes} orderBy={handleOrderBy} getData={handleData}/>}/>
-                <Route path="/detail/:id" element={<DetailShop data={shoes} />}>
+                <Route path="/detail/:id" element={<DetailShop data={shoes} />} >
                     <Route path="test" element={<Sub />} />
                 </Route>
             </Routes>

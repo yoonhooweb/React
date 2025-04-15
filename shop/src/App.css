@@ -48,3 +48,13 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.colorCard {
+  background-color: #ddd;
+  transition: all 1s ease;
+}
+
+.noneColor { 
+  background-color: #fff;
+}
