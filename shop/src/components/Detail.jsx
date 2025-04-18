@@ -5,7 +5,6 @@ import {Nav } from 'react-bootstrap';
 
 function DetailShop({data}) {
 
-    let alert = document.querySelector(".alert");
     let [ count , setCount ] = useState(0);
     let [alertSwitch , setAlertSwitch] = useState(true);
     let [ noKorea, setNoKorea ] = useState("0");
@@ -14,7 +13,6 @@ function DetailShop({data}) {
 
 
     let param = useParams();
-    let inputNumber = document.querySelector('#data');
     let number = data.find( (item) => {
         return item.id == param.id;
     })
@@ -105,8 +103,6 @@ function TabNav ({ tabIndex, tabSetData, shoesData}) {
 }
 
 function TabContents ( { tabData , data}) {
-    console.log(`2222222`);
-    console.log(data);
     if ( tabData === 0) {
         return <div>이것은 탭1일때 작동합니다.</div>
     } else if (tabData === 1) {

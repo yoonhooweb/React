@@ -8,6 +8,7 @@ import DetailShop from "./components/detail.jsx";
 import List from "./components/List.jsx";
 import Sub from "./components/sub/Sub.jsx";
 import { orderBy, getData} from './js/function.js'
+import Cart from './components/Cart.jsx'
 
 function App() {
     let [shoes, setShoes] = useState(shoesData);
@@ -42,6 +43,7 @@ function App() {
                     <Navbar.Brand>Shop</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link onClick={() => navi("/")}>Home</Nav.Link>
+                        <Nav.Link onClick={() => navi("/Cart")}>Cart</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
@@ -51,6 +53,7 @@ function App() {
                 <Route path="/detail/:id" element={<DetailShop data={shoes} />} >
                     <Route path="test" element={<Sub />} />
                 </Route>
+                <Route path="/cart" element={<Cart />} />
             </Routes>
         </div>
     );
