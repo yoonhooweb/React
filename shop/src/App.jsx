@@ -53,7 +53,7 @@ function App() {
                 <Route path="/detail/:id" element={<DetailShop data={shoes} />} >
                     <Route path="test" element={<Sub />} />
                 </Route>
-                <Route path="/cart" element={<Cart />} />
+                <Route path="/Cart" element={<Cart />} />
             </Routes>
         </div>
     );

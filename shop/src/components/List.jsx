@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
+let aa = 20;
+
 export default function List({ data, orderBy, getData }) {
     const navi = useNavigate();
 

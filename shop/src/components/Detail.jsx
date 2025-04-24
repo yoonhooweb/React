@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import {Link, Outlet, useParams } from 'react-router-dom';
 import {Nav } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItems } from './../store.js'
 
 
 function DetailShop({data}) {
@@ -11,6 +13,8 @@ function DetailShop({data}) {
     let [ tab , setTab] = useState(0);
     let [ fade , setFade ] = useState('');
 
+    let state = useSelector( (state) => {return  state.cartData } )
+    let dispatch = useDispatch();
 
     let param = useParams();
     let number = data.find( (item) => {
@@ -56,7 +60,7 @@ function DetailShop({data}) {
                         <h4 className="pt-5">{number.title}</h4>
                         <p>{number.content}</p>
                         <p>{number.price}</p>
-                        <button className="btn btn-danger" onClick={() => { setCount(count + 1)}}>주문하기</button>
+                        <button className="btn btn-danger" onClick={() => { dispatch(addItems(number)) }}>주문하기</button>
                         <Link to="/">홈으로</Link>
                         
                     </div>
@@ -64,6 +68,7 @@ function DetailShop({data}) {
                 </div>
 
                 <TabNav tabIndex = { tab } tabSetData = { setTab } shoesData={data}/>
+                {state.cartData}
             </div>
         </>
     );
@@ -82,8 +87,6 @@ function Warning () {
 }
 
 function TabNav ({ tabIndex, tabSetData, shoesData}) {
-    console.log(`111111111111`);
-    console.log(shoesData);
     return (
         <>
             <Nav justify variant="tabs" defaultActiveKey="link-0" >

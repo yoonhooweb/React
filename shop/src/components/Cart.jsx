@@ -1,11 +1,10 @@
 import Table from 'react-bootstrap/Table'; 
 import { useDispatch, useSelector } from 'react-redux';
-import { changeName, countPlus } from './../store.js'
+import { changeName, countPlus, removeItem } from './../store.js'
 
 function Cart() {
 
-    let data = useSelector( (state) => { return state.cartData });
-    let userName = useSelector( (state) => { return state.userName });
+    let state = useSelector( (state) => { return state});
     let dispatch = useDispatch();
 
     return (
@@ -21,21 +20,21 @@ function Cart() {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((v,i)=>{
+                    {state.cartData.map((v,i)=>{
                         return (
                             <tr key={v.id}>
                                 <td>{v.id}</td>
-                                <td>{v.id}</td>
-                                <td>{v.name}</td>
+                                <td>{v.title}</td>
                                 <td>{v.count}</td>
-                                <td> <button onClick={()=> { dispatch(countPlus(data))}}> + </button> </td>
+                                {/* 현재 클릭한 버튼의 오브젝트 내 id 값 보내기기 */}
+                                <td> <button onClick={()=> { dispatch(countPlus(v.id))}}> + </button> </td> 
+                                <td> <button onClick={()=> { dispatch(removeItem(v.id))}}> - </button> </td> 
                             </tr>
                         )
                     })}
                     <tr>
-                        <td>
-                            {userName}
-                        </td>
+                        <td>{state.userName.name}</td>
+                        <td>{state.userName.age}</td>
                         <td>
                             <button onClick={()=> { dispatch(changeName())}}> 이름바꾸기 </button>
                         </td>
