@@ -42,7 +42,7 @@ function DetailShop({data}) {
         return <div> 존재하지 않는 상품입니다. </div>
     }
 
-    /* 로컬스토리지에 최근본 데이터 id 값으로 저장 중복 데이터 제거 */
+    /* 로컬스토리지에 최근본 데이터 id 값으로 저장 중복 데이터 제거*/
     useEffect(() => {
         let watchedArray = JSON.parse(localStorage.getItem('watched')) || []
 
