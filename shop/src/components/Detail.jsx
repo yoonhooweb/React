@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {Link, Outlet, useParams } from 'react-router-dom';
+import {json, Link, Outlet, useParams } from 'react-router-dom';
 import {Nav } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItems } from './../store.js'
@@ -41,6 +41,20 @@ function DetailShop({data}) {
     if (!number) {
         return <div> 존재하지 않는 상품입니다. </div>
     }
+
+    /* 로컬스토리지에 최근본 데이터 id 값으로 저장 중복 데이터 제거 */
+    useEffect(() => {
+        let watchedArray = JSON.parse(localStorage.getItem('watched')) || []
+
+        if (!watchedArray.includes(number.id)) {
+            watchedArray.push(number.id);
+            localStorage.setItem('watched', JSON.stringify(watchedArray));
+        } else {
+            return false;
+        }
+    }, [number])
+    
+
 
     return (
         <>

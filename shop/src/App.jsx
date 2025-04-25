@@ -36,6 +36,13 @@ function App() {
         
     }
 
+    let obj = {name : 'kim'};
+   
+    localStorage.setItem('data', JSON.stringify(obj));
+
+    let tt = JSON.parse(localStorage.getItem('data'))
+    console.log(tt.name);
+
     return (
         <div className="app">
             <Navbar bg="dark" data-bs-theme="dark">

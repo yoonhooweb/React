@@ -26,13 +26,21 @@ let cartData = createSlice( {
         },
         removeItem( state, action) {
             let item = action.payload;
-            let found = state.findIndex((v) => item.id == v.id )
-
-            if (found) {
-                found.count -= 1;
+            let remove = state.findIndex((v) => item == v.id )
+            let remov1e = state.findIndex(function(v) {
+                console.log(v);
+            } )
+            
+            
+            if (state[remove].count > 1) {
+                state[remove].count -= 1;
             } else {
-                found.splice(found, 1);
+                let countDown = state.findIndex((v) => item == v.id )
+                if (countDown > -1 ) {
+                    state.splice(remove, 1)
+                }
             }
+
         }
     }
 })
