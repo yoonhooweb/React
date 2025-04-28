@@ -1,7 +1,7 @@
 export default function Schedule () {
     return (
         <>
-            일정관리 페이지
+            <h3>일정관리 페이지</h3>
         </>
     )
 }

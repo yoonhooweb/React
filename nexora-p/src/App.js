@@ -103,6 +103,13 @@ function App() {
 									</div>
 								</div>
 							</div>
+							<div className="right-contents-body">
+								<Routes>
+									<Route path="/" element={<Main/>}/>
+									<Route path="/Schedule" element={<Schedule/>} /> 
+									<Route path="/TodoList" element={<TodoList/>} />
+								</Routes>
+							</div>
 						</div>
 					</div>
 				</div>
