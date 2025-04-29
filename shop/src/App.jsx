@@ -43,7 +43,7 @@ function App() {
     let tt = JSON.parse(localStorage.getItem('data'))
     console.log(tt.name);
 
-    return (
+    return ( 
         <div className="app">
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container className="gkgldkgld">
