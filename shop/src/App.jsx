@@ -39,7 +39,7 @@ function App() {
     let obj = {name : 'kim'};
    
     localStorage.setItem('data', JSON.stringify(obj));
-
+ 
     let tt = JSON.parse(localStorage.getItem('data'))
     console.log(tt.name);
     
