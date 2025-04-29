@@ -6,7 +6,7 @@ function Cart() {
 
     let state = useSelector( (state) => { return state});
     let dispatch = useDispatch();
-
+    
     return (
         <div>
             <Table striped bordered hover>

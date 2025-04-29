@@ -56,15 +56,28 @@ let userName = createSlice( {
     }
 }) 
 
+let watched = createSlice ({
+    name : 'detailItem',
+    initialState : JSON.parse(localStorage.getItem('watched')),
+    reducers : {
+        detailItems(state, action) {
+            console.log(state);
+            return state
+        }
+    }
+})
+
 //userName 안에 들어있는 스테이트 변경 방법  및 밖으로 꺼내서 사용하는법
 export let { changeName } = userName.actions  //이걸 사용하면 변경함수들이 여기에 남음
 export let { countPlus } = cartData.actions  //이걸 사용하면 변경함수들이 여기에 남음
 export let { addItems } = cartData.actions  //이걸 사용하면 변경함수들이 여기에 남음
 export let { removeItem } = cartData.actions  //이걸 사용하면 변경함수들이 여기에 남음
+export let { detailItems } = watched.actions
 
 export default configureStore({
     reducer: {
         cartData : cartData.reducer,
         userName : userName.reducer,
+        detailItems : watched.reducer
     },
 });

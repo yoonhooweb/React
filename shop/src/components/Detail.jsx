@@ -49,7 +49,7 @@ function DetailShop({data}) {
         if (!watchedArray.includes(number.id)) {
             watchedArray.push(number.id);
             localStorage.setItem('watched', JSON.stringify(watchedArray));
-            dispatch()
+            dispatch(detailItems(watchedArray));
         } else {
             return false;
         }
