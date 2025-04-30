@@ -7,8 +7,11 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import DetailShop from "./components/detail.jsx";
 import List from "./components/List.jsx";
 import Sub from "./components/sub/Sub.jsx";
-import { orderBy, getData} from './js/function.js'
-import Cart from './components/Cart.jsx'
+import { orderBy, getData} from './js/function.js';
+import Cart from './components/Cart.jsx';
+import axios from "axios";
+import {useQuery} from '@tanstack/react-query';
+
 
 function App() {
     let [shoes, setShoes] = useState(shoesData);
@@ -36,13 +39,15 @@ function App() {
         
     }
 
-    let obj = {name : 'kim'};
-   
-    localStorage.setItem('data', JSON.stringify(obj));
- 
-    let tt = JSON.parse(localStorage.getItem('data'))
-    console.log(tt.name);
-    
+    let result = useQuery({
+        queryKey: ['userdata'],
+        queryFn: async () => {
+          const res = await axios.get('https://codingapple1.github.io/userdata.json');
+          console.log('유저 데이터:', res.data);
+          return res.data;
+        },
+      });
+
     return ( 
         <div className="app">
             <Navbar bg="dark" data-bs-theme="dark">
@@ -51,6 +56,9 @@ function App() {
                     <Nav className="me-auto">
                         <Nav.Link onClick={() => navi("/")}>Home</Nav.Link>
                         <Nav.Link onClick={() => navi("/Cart")}>Cart</Nav.Link>
+                    </Nav>
+                    <Nav className="ms-auto text-white">
+                        {result.isLoading ? '로딩중' : result.data.name}
                     </Nav>
                 </Container>
             </Navbar>

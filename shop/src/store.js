@@ -61,8 +61,7 @@ let watched = createSlice ({
     initialState : JSON.parse(localStorage.getItem('watched')),
     reducers : {
         detailItems(state, action) {
-            console.log(state);
-            return state
+            return state;
         }
     }
 })

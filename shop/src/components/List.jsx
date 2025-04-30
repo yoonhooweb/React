@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { detailItems } from './../store.js'
 import { useDispatch, useSelector } from "react-redux";
 
 
@@ -10,7 +9,6 @@ export default function List({ data, orderBy, getData }) {
     const navi = useNavigate();
 
     let state = useSelector( (state) => {return  state.detailItems} )
-
     console.log(state)
 
     return (
