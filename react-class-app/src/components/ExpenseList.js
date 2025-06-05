@@ -1,29 +1,21 @@
-import React, { Component } from 'react'
-import '../components_css/Expense.css'
-import ExpenseItem from './ExpenseItem'
-import { MdDelete } from 'react-icons/md'
+import "../components_css/Expense.css";
+import ExpenseItem from "./ExpenseItem";
+import { MdDelete } from "react-icons/md";
 
-export class ExpenseList extends Component {
-  render() {
+function ExpenseList({ data, handleDelete }) {
     return (
         <>
             <ul>
-                {this.props.itemList.map((item) => {
-                    return <ExpenseItem 
-                                key={item.id} 
-                                item={item} 
-                                delete={this.props.handleDelete} 
-                            />
-                  })
-                }
+                {data.map((item) => {
+                    return <ExpenseItem key={item.id} item={item} onDelete={handleDelete} />;
+                })}
             </ul>
             <button className='btn'>
                 목록 지우기
-                <MdDelete className='btn-icon'/>
+                <MdDelete className='btn-icon' />
             </button>
         </>
-    )
-  }
+    );
 }
 
-export default ExpenseList
+export default ExpenseList;
