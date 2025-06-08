@@ -1,17 +1,17 @@
 import '../components_css/Expense.css'
 import { MdSend } from 'react-icons/md';
 
-function ExpenseForm () {
+function ExpenseForm ({ pushDataCharge, pushDataAmount, charge, amount, submitData }) {
     return (
-        <form>
+        <form onSubmit={ submitData }>
             <div className='form-center'>
                 <div className='form-group'>
                     <label htmlFor='expense'>지출 내역</label>
-                    <input type='text' className='form-control' id='charge' placeholder='예) 식비' />
+                    <input type='text' name='charge' className='form-control' id='charge' placeholder='예) 식비' onChange={pushDataCharge} value={charge} />
                 </div>
                 <div className='form-group'>
                     <label htmlFor='amount'>금액</label>
-                    <input type='number' className='form-control' id='amount' placeholder='금액을 입력하세요' />
+                    <input type='number' name='amount' className='form-control' id='amount' placeholder='금액을 입력하세요' onChange={pushDataAmount} value={amount}/>
                 </div>
             </div>
             <button type='submit' className='btn'>
