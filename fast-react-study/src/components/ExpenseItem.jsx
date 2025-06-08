@@ -1,26 +1,23 @@
-import React, { Component } from 'react'
 import { MdDelete, MdOutlineMode  } from "react-icons/md";
 import '../components_css/ExpenseItem.css'
 
-export class ExpenseItem extends Component {
-  render() {
+function ExpenseItem (props){
+	console.log(props);
     return (
       <>
         <li className='item'>
             <div className='info'>
-                <span className='expense' >{this.props.item.charge}</span>
-                <span className='amount'>{this.props.item.amount}</span>
+                <span className='expense' >{props.item.charge}</span>
+                <span className='amount'>{props.item.amount}</span>
             </div>
             <div>
                 <button className='edit-btn' ><MdOutlineMode /></button>
-                <button className='clear-btn' onClick={ () => {
-                    this.props.delete(this.props.item.id);
+                <button className='clear-btn' onClick={ () => { props.onDelete(props.item.id);
                 }}><MdDelete /></button>                
             </div>
         </li>
       </>
     )
   }
-}
 
 export default ExpenseItem;
