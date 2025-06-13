@@ -6,6 +6,7 @@ function App() {
 
     const [charge , setCharge ] = useState('')
     const [amount , setAmount ] = useState();
+    const [count , setCount ] = useState(0);
 
     const [data, setData] = useState([
         { id: 1, charge: "렌트비", amount: 1500 },
@@ -39,6 +40,10 @@ function App() {
         }
     }
 
+    const countPlus = () => {
+        setCount ( prev => prev + 1 );
+    }
+
 
     return (
         <main className='main-container' style={{ width: "90%", margin: "auto" }}>
@@ -54,9 +59,11 @@ function App() {
 
             <div style={{ display: "flex", justifyContent: "end", marginTop: "1rem" }}>
                 <p style={{ fontSize: "1.2rem" }}>
-                    총 지출 :<span> 0원</span>
+                    총 지출 :<span> {count}원</span>
                 </p>
             </div>
+
+            <button onClick={ countPlus }>버튼</button>
         </main>
     );
 }
