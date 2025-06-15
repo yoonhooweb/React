@@ -1,20 +1,20 @@
 import { MdDelete, MdOutlineMode } from "react-icons/md";
 import "../components_css/ExpenseItem.css";
 
-function ExpenseItem(props) {
+function ExpenseItem({item, handleDelete, handleEdit}) {
     
     return (
         <>
             <li className='item'>
                 <div className='info'>
-                    <span className='expense'>{props.item.charge}</span>
-                    <span className='amount'>{props.item.amount}</span>
+                    <span className='expense'>{item.charge}</span>
+                    <span className='amount'>{item.amount}</span>
                 </div>
                 <div>
-                    <button className='edit-btn'>
+                    <button className='edit-btn' onClick={ () => handleEdit(item.id)}>
                         <MdOutlineMode />
                     </button>
-                    <button className='clear-btn' onClick={() => { props.onDelete(props.item.id); }}>
+                    <button className='clear-btn' onClick={() => { handleDelete(item.id); }}>
                         <MdDelete />
                     </button>
                 </div>

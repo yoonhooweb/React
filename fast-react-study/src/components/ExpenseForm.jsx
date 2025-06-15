@@ -1,7 +1,7 @@
 import '../components_css/Expense.css'
 import { MdSend } from 'react-icons/md';
 
-function ExpenseForm ({ pushDataCharge, pushDataAmount, charge, amount, submitData }) {
+function ExpenseForm ({ pushDataCharge, pushDataAmount, charge, amount, submitData, edit }) {
     return (
         <form onSubmit={ submitData }>
             <div className='form-center'>
@@ -15,7 +15,8 @@ function ExpenseForm ({ pushDataCharge, pushDataAmount, charge, amount, submitDa
                 </div>
             </div>
             <button type='submit' className='btn'>
-                제출<MdSend className='btn-icon'/>
+                {edit ? "수정" : "제출"}
+                <MdSend className='btn-icon'/>
             </button>
         </form>
     )
