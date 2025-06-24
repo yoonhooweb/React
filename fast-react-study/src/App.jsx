@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
+import CountDispay from "./components/CountDispay";
 
 function App() {
 
@@ -46,6 +47,7 @@ function App() {
 
 
     return (
+        <>
         <main className='main-container' style={{ width: "90%", margin: "auto" }}>
             <h1>예산 계산기</h1>
             <div style={{ width: "100%", backgroundColor: "white", padding: "1rem" }}>
@@ -65,6 +67,9 @@ function App() {
 
             <button onClick={ countPlus }>버튼</button>
         </main>
+
+        <CountDispay />
+        </>
     );
 }
 
