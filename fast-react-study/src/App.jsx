@@ -1,11 +1,8 @@
 import React, { Component, useCallback, useMemo, useState } from "react";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
-<<<<<<< HEAD
 import CountDispay from "./components/CountDispay";
-=======
 import Alert from './components/Alert';
->>>>>>> a9302fd49f3aa0514645186f7a95c8e59ee800ff
 
 function App() {
 
